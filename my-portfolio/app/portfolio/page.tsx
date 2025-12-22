@@ -1,0 +1,131 @@
+import Link from "next/link";
+
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  link: string;
+  gradient: string;
+}
+
+export default function Portfolio() {
+  const projects: Project[] = [
+    {
+      title: "E-Commerce Platform",
+      description:
+        "A full-featured online store with cart, checkout, and payment integration.",
+      technologies: ["Next.js", "Tailwind CSS", "Stripe"],
+      link: "#",
+      gradient: "from-blue-400 to-blue-600",
+    },
+    {
+      title: "Task Management App",
+      description:
+        "A productivity app for managing tasks and projects with team collaboration.",
+      technologies: ["React", "Node.js", "MongoDB"],
+      link: "#",
+      gradient: "from-purple-400 to-purple-600",
+    },
+    {
+      title: "Portfolio Website",
+      description:
+        "A clean and modern portfolio template for developers and designers.",
+      technologies: ["Next.js", "TypeScript", "Tailwind"],
+      link: "#",
+      gradient: "from-emerald-400 to-emerald-600",
+    },
+    {
+      title: "Weather Dashboard",
+      description:
+        "Real-time weather information with beautiful visualizations and forecasts.",
+      technologies: ["React", "API", "Chart.js"],
+      link: "#",
+      gradient: "from-orange-400 to-orange-600",
+    },
+    {
+      title: "Blog Platform",
+      description:
+        "A modern blogging platform with markdown support and SEO optimization.",
+      technologies: ["Next.js", "MDX", "Prisma"],
+      link: "#",
+      gradient: "from-pink-400 to-pink-600",
+    },
+    {
+      title: "Social Media App",
+      description:
+        "A social networking application with real-time messaging and notifications.",
+      technologies: ["React", "Firebase", "WebSocket"],
+      link: "#",
+      gradient: "from-cyan-400 to-cyan-600",
+    },
+  ];
+
+  return (
+    <main className="min-h-[calc(100vh-4rem)] py-16 px-6">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900 dark:text-white">
+          My Projects
+        </h1>
+        <p className="text-gray-500 text-center mb-12 max-w-2xl mx-auto">
+          Here are some of my recent projects. Each one was built with passion
+          and attention to detail.
+        </p>
+
+        {/* Project Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => (
+            <Link href={project.link} key={index} className="block group">
+              <article className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl">
+                {/* Project Preview */}
+                <div
+                  className={`h-40 bg-gradient-to-br ${project.gradient} flex items-center justify-center`}
+                >
+                  <span className="text-white text-xl font-semibold opacity-80">
+                    Preview
+                  </span>
+                </div>
+
+                {/* Project Info */}
+                <div className="p-5">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-indigo-500 transition-colors">
+                      {project.title}
+                    </h3>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-4 h-4 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </div>
+                  <p className="text-sm text-gray-500 mb-4">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-xs text-gray-400">Built with:</span>
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs font-medium text-gray-600 dark:text-gray-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </main>
+  );
+}
