@@ -37,7 +37,7 @@ export default function Portfolio() {
         </ScrollAnimation>
 
         {/* Project Grid */}
-        <div className="flex justify-center gap-6">
+        <div className="flex justify-center gap-6 flex-wrap">
           {projects.map((project, index) => (
             <ScrollAnimation key={index} delay={index * 100}>
               <Link href={project.link} className="block group h-full max-w-sm">

@@ -70,14 +70,14 @@ export default function Home() {
               />
             </div>
             {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 w-16 h-16 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center shadow-lg animate-bounce">
+            <div className="absolute top-0 right-0 md:-top-4 md:-right-4 w-16 h-16 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center shadow-lg animate-bounce">
               <img
                 src="https://svgl.app/library/java.svg"
                 alt="Java"
                 className="w-10 h-10"
               />
             </div>
-            <div className="absolute -bottom-4 -left-4 w-14 h-14 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg animate-bounce delay-150">
+            <div className="absolute bottom-0 left-0 md:-bottom-4 md:-left-4 w-14 h-14 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg animate-bounce delay-150">
               <img
                 src="https://svgl.app/library/javascript.svg"
                 alt="JavaScript"
