@@ -39,7 +39,6 @@ export default function About() {
         { name: "PostgreSQL", icon: "postgresql.svg" },
         { name: "MySQL", icon: "mysql-icon-dark.svg" },
         { name: "MongoDB", icon: "mongodb-icon-dark.svg" },
-        { name: "Oracle", icon: "oracle.svg" },
       ],
     },
     {
@@ -55,74 +54,90 @@ export default function About() {
 
   const experiences = [
     {
-      title: "Senior Frontend Developer",
-      company: "Tech Company",
-      period: "2022 - Present",
+      title: "Software Tester",
+      company: "Think Bit Company Limited",
+      period: "September 2025 - Present",
       description:
-        "Leading frontend development team, building scalable web applications using React and Next.js.",
+        "Responsible for manual and automated system testing, validating data accuracy within the system, writing test cases, and developing automated tests using Playwright and JavaScript.",
+      responsibilities: [
+        "Collaborated with the development team to identify, report, and resolve system defects"
+      ]
     },
     {
-      title: "Frontend Developer",
-      company: "Digital Agency",
-      period: "2020 - 2022",
+      title: "Internship: High-Performance Programming with Huge Database",
+      company: "Innovative Software Consulting",
+      period: "November 2024 - March 2025",
       description:
-        "Developed responsive websites and web applications for various clients using modern technologies.",
+        "During my internship at Innovative Software Consulting, I worked on optimizing data import/export processes using PostgreSQL 16 on CentOS 9. The project aimed at improving the handling of large datasets (50 million records across 4 partitioned files) through various methods, including Batch Insert, Thread, and Parallel Processing.",
+      responsibilities: [
+        "Optimized data import/export processes using Batch Insert, Thread, Parallel Processing, and Internal Queue",
+        "Developed and optimized the COPY command for faster data handling",
+        "Collaborated with the team to ensure efficient data export to 4 files",
+        "Gained practical experience with Java, PostgreSQL, and database optimization techniques"
+      ]
     },
     {
-      title: "Junior Developer",
-      company: "Startup Inc.",
-      period: "2018 - 2020",
+      title: "Project: Custom Keyboard System",
+      company: "Kasetsart University Kamphaeng Saen Campus",
+      period: "June 2024 - November 2024",
       description:
-        "Started my career building websites and learning modern frontend frameworks.",
+        "Developed as part of my graduation project at Kasetsart University, Kamphaeng Saen Campus, the Custom Keyboard System is a web-based application that allows users to customize every component of a keyboard, including keycaps, switches, and base frames. The platform also features integrated e-commerce functionality to support the purchase of fully customized keyboards.",
+      responsibilities: [
+        "Developed a fully functional web application for complete keyboard customization",
+        "Integrated e-commerce features to enable direct purchasing through the platform",
+        "Collaborated in a team of 2 developers with a primary focus on web development",
+        "Utilized React.js and JavaScript (JS) for the front end Node.js and Express for the back end; and MongoDB for database management",
+        "Gained hands-on experience in full-stack development, covering both front-end and back-end technologies"
+      ]
     },
   ];
 
   const education = [
     {
-      degree: "Master of Computer Science",
-      school: "University of Technology",
-      period: "2016 - 2018",
-      description: "Specialized in Software Engineering and Web Technologies.",
+      degree: "Bachelor of Computer Science",
+      school: "Kasetsart University Kamphaeng Saen Campus",
+      period: "2021 - 2024",
+      description: "Computer Science program with GPA: 2.73",
     },
     {
-      degree: "Bachelor of Computer Science",
-      school: "State University",
-      period: "2012 - 2016",
-      description:
-        "Foundation in programming, algorithms, and data structures.",
+      degree: "High School Diploma - Computer Science",
+      school: "Mattayomthanbinkamphangsaen School",
+      period: "2018 - 2021",
+      description: "Computer Science program with GPA: 3.16",
     },
   ];
 
   return (
     <main className="min-h-[calc(100vh-4rem)] py-16 px-6">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <ScrollAnimation>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Illustration */}
+            {/* Profile Image */}
             <div className="flex justify-center">
-              <div className="w-full max-w-sm aspect-square rounded-2xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center text-8xl shadow-lg border border-gray-200 dark:border-gray-700">
-                💻
+              <div className="w-full max-w-sm aspect-square rounded-2xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
+                <img
+                  src="/me_2.jpg"
+                  alt="Profile"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
             {/* Content */}
-            <div>
+            <div className="max-w-lg">
               <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
-                About me.
+                About me
               </h1>
               <p className="text-gray-500 mb-4 leading-relaxed">
-                I&apos;m a passionate developer with a love for creating
-                beautiful and functional web experiences. With expertise in
-                frontend development and a keen eye for design, I bring ideas to
-                life through code.
+                I am a Computer Science graduate from Kasetsart University. My journey started with developing a web application for my Custom Keyboard project using React and Node.js, followed by an internship where I worked with Java and PostgreSQL to handle large databases.
               </p>
               <p className="text-gray-500 mb-6 leading-relaxed">
-                When I&apos;m not coding, you can find me exploring new
-                technologies, contributing to open-source projects, or enjoying
-                a good cup of coffee while brainstorming my next project.
+                These experiences helped me understand how software is built from both front-end and back-end perspectives. Now, I use this understanding in Software Testing, applying my coding skills to write automated tests with Playwright and ensure the system works reliably.
               </p>
               <Link
                 href="/Curriculum Vitae.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-3 bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded-lg transition-all hover:-translate-y-0.5 hover:shadow-lg"
               >
                 DOWNLOAD CV
@@ -220,6 +235,16 @@ export default function About() {
                       {exp.company}
                     </p>
                     <p className="text-gray-500 text-sm">{exp.description}</p>
+                    {exp.responsibilities && exp.responsibilities.length > 0 && (
+                      <ul className="mt-3 space-y-1">
+                        {exp.responsibilities.map((resp, respIndex) => (
+                          <li key={respIndex} className="text-gray-500 text-sm flex items-start gap-2">
+                            <span className="text-indigo-500 mt-1">•</span>
+                            <span>{resp}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </div>
               ))}

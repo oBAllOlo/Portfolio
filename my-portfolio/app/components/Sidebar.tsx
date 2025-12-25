@@ -3,7 +3,7 @@
 import Link from "next/link";
 
 // Social icons as SVG components
-const LinkedInIcon = () => (
+const FacebookIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20"
@@ -11,7 +11,7 @@ const LinkedInIcon = () => (
     viewBox="0 0 24 24"
     fill="currentColor"
   >
-    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+    <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
   </svg>
 );
 
@@ -46,16 +46,16 @@ export default function Sidebar() {
       <aside className="fixed left-0 top-0 bottom-0 w-16 hidden md:flex flex-col items-center justify-center z-50">
         <div className="flex flex-col gap-4">
           <Link
-            href="https://linkedin.com"
+            href="https://web.facebook.com/sittipong.jongrungsumran/"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 text-gray-500 hover:text-indigo-500 transition-colors"
-            aria-label="LinkedIn"
+            aria-label="Facebook"
           >
-            <LinkedInIcon />
+            <FacebookIcon />
           </Link>
           <Link
-            href="https://github.com"
+            href="https://github.com/oBAllOlo"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 text-gray-500 hover:text-indigo-500 transition-colors"
@@ -64,7 +64,7 @@ export default function Sidebar() {
             <GitHubIcon />
           </Link>
           <Link
-            href="https://instagram.com"
+            href="https://www.instagram.com/byballolo/"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 text-gray-500 hover:text-indigo-500 transition-colors"
@@ -78,11 +78,11 @@ export default function Sidebar() {
       {/* Right Sidebar - Email */}
       <aside className="fixed right-0 top-0 bottom-0 w-16 hidden md:flex flex-col items-center justify-center z-50">
         <Link
-          href="mailto:your.email@example.com"
+          href="mailto:sittipongj74@gmail.com"
           className="text-gray-500 hover:text-indigo-500 transition-colors text-sm tracking-wider"
           style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
         >
-          your.email@example.com
+          sittipongj74@gmail.com
         </Link>
       </aside>
     </>
