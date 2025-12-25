@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -41,7 +40,6 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <ThemeToggle />
         </nav>
 
         {/* Mobile Menu Button */}

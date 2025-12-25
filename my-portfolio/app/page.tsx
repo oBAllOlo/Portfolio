@@ -5,7 +5,12 @@ import ScrollAnimation from "./components/ScrollAnimation";
 import Link from "next/link";
 
 export default function Home() {
-  const roles = ["Frontend Developer", "UI/UX Designer", "Creative Coder"];
+  const roles = [
+    "Software Tester",
+    "Manual Tester",
+    "Automated Tester",
+    "Java Developer",
+  ];
 
   return (
     <main className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-6">
