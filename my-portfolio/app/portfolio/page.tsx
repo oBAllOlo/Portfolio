@@ -14,11 +14,11 @@ interface Project {
 export default function Portfolio() {
   const projects: Project[] = [
     {
-      title: "E-Commerce Platform",
+      title: "Custom Keyboard System",
       description:
         "A full-featured online store with cart, checkout, and payment integration.",
       technologies: ["Next.js", "Tailwind CSS", "Stripe"],
-      link: "#",
+      link: "https://my-ecom-rho.vercel.app/",
       gradient: "from-blue-400 to-blue-600",
     },
   ];
@@ -40,7 +40,7 @@ export default function Portfolio() {
         <div className="flex justify-center gap-6 flex-wrap">
           {projects.map((project, index) => (
             <ScrollAnimation key={index} delay={index * 100}>
-              <Link href={project.link} className="block group h-full max-w-sm">
+              <Link href={project.link} target="_blank" rel="noopener noreferrer" className="block group h-full max-w-sm">
                 <article className="h-full bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-indigo-500/50">
                   {/* Project Preview with hover effect */}
                   <div
