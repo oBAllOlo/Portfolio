@@ -122,7 +122,7 @@ export default function About() {
                 a good cup of coffee while brainstorming my next project.
               </p>
               <Link
-                href="/resume.pdf"
+                href="/Curriculum Vitae.pdf"
                 className="inline-flex items-center gap-2 px-8 py-3 bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded-lg transition-all hover:-translate-y-0.5 hover:shadow-lg"
               >
                 DOWNLOAD CV

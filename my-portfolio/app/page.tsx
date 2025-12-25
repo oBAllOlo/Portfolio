@@ -64,15 +64,27 @@ export default function Home() {
           className="order-1 md:order-2 flex justify-center"
         >
           <div className="relative">
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white text-6xl shadow-2xl animate-pulse">
-              👨‍💻
+            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center shadow-2xl overflow-hidden">
+              <img
+                src="/me.jpg"
+                alt="Profile"
+                className="w-full h-full object-cover"
+              />
             </div>
             {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-lg flex items-center justify-center text-2xl shadow-lg animate-bounce">
-              ⚡
+            <div className="absolute -top-4 -right-4 w-16 h-16 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center shadow-lg animate-bounce">
+              <img
+                src="https://svgl.app/library/java.svg"
+                alt="Java"
+                className="w-10 h-10"
+              />
             </div>
-            <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-green-400 rounded-full flex items-center justify-center text-xl shadow-lg animate-bounce delay-150">
-              ✨
+            <div className="absolute -bottom-4 -left-4 w-14 h-14 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg animate-bounce delay-150">
+              <img
+                src="https://svgl.app/library/javascript.svg"
+                alt="JavaScript"
+                className="w-8 h-8"
+              />
             </div>
           </div>
         </ScrollAnimation>
