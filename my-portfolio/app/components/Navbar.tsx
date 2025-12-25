@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { FacebookIcon, GitHubIcon, InstagramIcon } from "./SocialIcons";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -99,6 +100,45 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
+            
+            {/* Mobile Social Links & Contact */}
+            <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 space-y-4">
+              <div className="flex items-center justify-center gap-6">
+                <Link
+                  href="https://web.facebook.com/sittipong.jongrungsumran/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-indigo-500 transition-colors"
+                  aria-label="Facebook"
+                >
+                  <FacebookIcon />
+                </Link>
+                <Link
+                  href="https://github.com/oBAllOlo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-indigo-500 transition-colors"
+                  aria-label="GitHub"
+                >
+                  <GitHubIcon />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/byballolo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-indigo-500 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <InstagramIcon />
+                </Link>
+              </div>
+              <Link
+                href="mailto:sittipongj74@gmail.com"
+                className="block text-center text-gray-500 hover:text-indigo-500 transition-colors text-sm"
+              >
+                sittipongj74@gmail.com
+              </Link>
+            </div>
           </nav>
         </div>
       )}
