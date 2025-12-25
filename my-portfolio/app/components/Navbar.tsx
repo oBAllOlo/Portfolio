@@ -11,8 +11,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Portfolio", href: "/portfolio" },
-    { name: "Contacts", href: "/contacts" },
+    { name: "Projects", href: "/portfolio" },
   ];
 
   return (
@@ -21,7 +20,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="text-lg font-semibold">
           <span className="text-gray-500">{"{ "}</span>
-          <span className="text-gray-800 dark:text-gray-100">YOUR NAME</span>
+          <span className="text-gray-800 dark:text-gray-100">Sittipong Jongrungsumran</span>
           <span className="text-gray-500">{" }"}</span>
         </Link>
 

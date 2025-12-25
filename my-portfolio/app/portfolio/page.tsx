@@ -21,46 +21,6 @@ export default function Portfolio() {
       link: "#",
       gradient: "from-blue-400 to-blue-600",
     },
-    {
-      title: "Task Management App",
-      description:
-        "A productivity app for managing tasks and projects with team collaboration.",
-      technologies: ["React", "Node.js", "MongoDB"],
-      link: "#",
-      gradient: "from-purple-400 to-purple-600",
-    },
-    {
-      title: "Portfolio Website",
-      description:
-        "A clean and modern portfolio template for developers and designers.",
-      technologies: ["Next.js", "TypeScript", "Tailwind"],
-      link: "#",
-      gradient: "from-emerald-400 to-emerald-600",
-    },
-    {
-      title: "Weather Dashboard",
-      description:
-        "Real-time weather information with beautiful visualizations and forecasts.",
-      technologies: ["React", "API", "Chart.js"],
-      link: "#",
-      gradient: "from-orange-400 to-orange-600",
-    },
-    {
-      title: "Blog Platform",
-      description:
-        "A modern blogging platform with markdown support and SEO optimization.",
-      technologies: ["Next.js", "MDX", "Prisma"],
-      link: "#",
-      gradient: "from-pink-400 to-pink-600",
-    },
-    {
-      title: "Social Media App",
-      description:
-        "A social networking application with real-time messaging and notifications.",
-      technologies: ["React", "Firebase", "WebSocket"],
-      link: "#",
-      gradient: "from-cyan-400 to-cyan-600",
-    },
   ];
 
   return (
@@ -77,10 +37,10 @@ export default function Portfolio() {
         </ScrollAnimation>
 
         {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex justify-center gap-6">
           {projects.map((project, index) => (
             <ScrollAnimation key={index} delay={index * 100}>
-              <Link href={project.link} className="block group h-full">
+              <Link href={project.link} className="block group h-full max-w-sm">
                 <article className="h-full bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-indigo-500/50">
                   {/* Project Preview with hover effect */}
                   <div

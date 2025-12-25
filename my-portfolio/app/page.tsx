@@ -7,26 +7,24 @@ import Link from "next/link";
 export default function Home() {
   const roles = [
     "Software Tester",
-    "Manual Tester",
-    "Automated Tester",
     "Java Developer",
+    "Full-stack development"
   ];
 
   return (
     <main className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-6">
-      <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Text Content */}
-        <ScrollAnimation className="order-2 md:order-1">
+        <ScrollAnimation className="order-2 md:order-1 max-w-lg">
           <p className="text-lg text-gray-500 mb-2">Hi 👋, my name is</p>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-gray-900 dark:text-white">
-            Your Name
+            Sittipong Jongrungsumran
           </h1>
           <div className="text-xl md:text-2xl mb-6 h-8">
             <TypeWriter words={roles} />
           </div>
           <p className="text-gray-500 mb-8 leading-relaxed">
-            I create beautiful and functional web experiences. Passionate about
-            clean code, modern design, and bringing ideas to life.
+            Computer Science graduate skilled in Java and full-stack technologies with professional experience in automated software testing. Adept at leveraging development expertise to build efficient testing frameworks and optimize system performance.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
