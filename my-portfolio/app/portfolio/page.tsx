@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import ScrollAnimation from "../components/ScrollAnimation";
 
 interface Project {
@@ -8,7 +9,7 @@ interface Project {
   description: string;
   technologies: string[];
   link: string;
-  gradient: string;
+  imageUrl: string;
 }
 
 export default function Portfolio() {
@@ -17,9 +18,9 @@ export default function Portfolio() {
       title: "Custom Keyboard System",
       description:
         "A full-featured online store with cart, checkout, and payment integration.",
-      technologies: ["Next.js", "Tailwind CSS", "Stripe"],
+      technologies: ["Next.js", "Tailwind CSS"],
       link: "https://my-ecom-rho.vercel.app/",
-      gradient: "from-blue-400 to-blue-600",
+      imageUrl: "/cover_image_ecom.png",
     },
   ];
 
@@ -42,13 +43,14 @@ export default function Portfolio() {
             <ScrollAnimation key={index} delay={index * 100}>
               <Link href={project.link} target="_blank" rel="noopener noreferrer" className="block group h-full max-w-sm">
                 <article className="h-full bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-indigo-500/50">
-                  {/* Project Preview with hover effect */}
-                  <div
-                    className={`h-40 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}
-                  >
-                    <span className="text-white text-xl font-semibold opacity-80 group-hover:scale-110 transition-transform duration-300">
-                      Preview
-                    </span>
+                  {/* Project Preview Image */}
+                  <div className="h-40 relative overflow-hidden bg-gray-100 dark:bg-gray-700">
+                    <Image
+                      src={project.imageUrl}
+                      alt={project.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
                     {/* Shine effect on hover */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                   </div>
