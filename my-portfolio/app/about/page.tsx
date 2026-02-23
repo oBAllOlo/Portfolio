@@ -191,7 +191,7 @@ export default function About() {
                         <img
                           src={`https://svgl.app/library/${skill.icon}`}
                           alt={skill.name}
-                          className={`w-10 h-10 ${['github_dark.svg', 'mysql-icon-dark.svg', 'nextjs_icon_dark.svg'].includes(skill.icon) ? 'dark:invert-0 invert' : ''}`}
+                          className="w-10 h-10"
                         />
                       </div>
                     ))}
