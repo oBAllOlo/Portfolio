@@ -25,7 +25,7 @@ export default function About() {
       skills: [
         { name: "React", icon: "react_dark.svg" },
         { name: "Next.js", icon: "nextjs_icon_dark.svg" },
-        { name: "Vite", icon: "vitejs.svg" },
+        { name: "Vite", icon: "vite.svg" },
         { name: "Node.js", icon: "nodejs.svg" },
         { name: "Spring Boot", icon: "spring.svg" },
         { name: "Playwright", icon: "playwright.svg" },
@@ -60,8 +60,8 @@ export default function About() {
       description:
         "Responsible for manual and automated system testing, validating data accuracy within the system, writing test cases, and developing automated tests using Playwright and JavaScript.",
       responsibilities: [
-        "Collaborated with the development team to identify, report, and resolve system defects"
-      ]
+        "Collaborated with the development team to identify, report, and resolve system defects",
+      ],
     },
     {
       title: "Internship: High-Performance Programming with Huge Database",
@@ -73,8 +73,8 @@ export default function About() {
         "Optimized data import/export processes using Batch Insert, Thread, Parallel Processing, and Internal Queue",
         "Developed and optimized the COPY command for faster data handling",
         "Collaborated with the team to ensure efficient data export to 4 files",
-        "Gained practical experience with Java, PostgreSQL, and database optimization techniques"
-      ]
+        "Gained practical experience with Java, PostgreSQL, and database optimization techniques",
+      ],
     },
     {
       title: "Project: Custom Keyboard System",
@@ -87,8 +87,8 @@ export default function About() {
         "Integrated e-commerce features to enable direct purchasing through the platform",
         "Collaborated in a team of 2 developers with a primary focus on web development",
         "Utilized React.js and JavaScript (JS) for the front end Node.js and Express for the back end; and MongoDB for database management",
-        "Gained hands-on experience in full-stack development, covering both front-end and back-end technologies"
-      ]
+        "Gained hands-on experience in full-stack development, covering both front-end and back-end technologies",
+      ],
     },
   ];
 
@@ -129,10 +129,18 @@ export default function About() {
                 About me
               </h1>
               <p className="text-gray-500 mb-4 leading-relaxed">
-                I am a Computer Science graduate from Kasetsart University. My journey started with developing a web application for my Custom Keyboard project using React and Node.js, followed by an internship where I worked with Java and PostgreSQL to handle large databases.
+                I am a Computer Science graduate from Kasetsart University. My
+                journey started with developing a web application for my Custom
+                Keyboard project using React and Node.js, followed by an
+                internship where I worked with Java and PostgreSQL to handle
+                large databases.
               </p>
               <p className="text-gray-500 mb-6 leading-relaxed">
-                These experiences helped me understand how software is built from both front-end and back-end perspectives. Now, I use this understanding in Software Testing, applying my coding skills to write automated tests with Playwright and ensure the system works reliably.
+                These experiences helped me understand how software is built
+                from both front-end and back-end perspectives. Now, I use this
+                understanding in Software Testing, applying my coding skills to
+                write automated tests with Playwright and ensure the system
+                works reliably.
               </p>
               <Link
                 href="/Curriculum Vitae.pdf"
@@ -235,16 +243,20 @@ export default function About() {
                       {exp.company}
                     </p>
                     <p className="text-gray-500 text-sm">{exp.description}</p>
-                    {exp.responsibilities && exp.responsibilities.length > 0 && (
-                      <ul className="mt-3 space-y-1">
-                        {exp.responsibilities.map((resp, respIndex) => (
-                          <li key={respIndex} className="text-gray-500 text-sm flex items-start gap-2">
-                            <span className="text-indigo-500 mt-1">•</span>
-                            <span>{resp}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                    {exp.responsibilities &&
+                      exp.responsibilities.length > 0 && (
+                        <ul className="mt-3 space-y-1">
+                          {exp.responsibilities.map((resp, respIndex) => (
+                            <li
+                              key={respIndex}
+                              className="text-gray-500 text-sm flex items-start gap-2"
+                            >
+                              <span className="text-indigo-500 mt-1">•</span>
+                              <span>{resp}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                   </div>
                 </div>
               ))}
