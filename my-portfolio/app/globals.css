@@ -46,3 +46,14 @@ body {
 .typing-cursor {
   animation: blink 1s step-end infinite;
 }
+
+/* Invert white/dark icons in light mode so they're visible */
+.icon-invert-light {
+  filter: invert(1) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .icon-invert-light {
+    filter: invert(0) !important;
+  }
+}

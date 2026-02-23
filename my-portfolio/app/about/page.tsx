@@ -182,19 +182,22 @@ export default function About() {
                     {category.title}
                   </h3>
                   <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3">
-                    {category.skills.map((skill, index) => (
-                      <div
-                        key={index}
-                        className="group aspect-square bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex items-center justify-center p-3 hover:-translate-y-1"
-                        title={skill.name}
-                      >
-                        <img
-                          src={`https://svgl.app/library/${skill.icon}`}
-                          alt={skill.name}
-                          className="w-10 h-10"
-                        />
-                      </div>
-                    ))}
+                    {category.skills.map((skill, index) => {
+                      const isDarkIcon = ['github_dark.svg', 'mysql-icon-dark.svg', 'mongodb-icon-dark.svg', 'nextjs_icon_dark.svg'].includes(skill.icon);
+                      return (
+                        <div
+                          key={index}
+                          className="group aspect-square bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex items-center justify-center p-3 hover:-translate-y-1"
+                          title={skill.name}
+                        >
+                          <img
+                            src={`https://svgl.app/library/${skill.icon}`}
+                            alt={skill.name}
+                            className={`w-10 h-10 ${isDarkIcon ? 'icon-invert-light' : ''}`}
+                          />
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               ))}
