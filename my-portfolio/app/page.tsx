@@ -5,11 +5,7 @@ import ScrollAnimation from "./components/ScrollAnimation";
 import Link from "next/link";
 
 export default function Home() {
-  const roles = [
-    "Software Tester",
-    "Java Developer",
-    "Full-stack development"
-  ];
+  const roles = ["Software Tester", "Java Developer", "Full-stack development"];
 
   return (
     <main className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-6">
@@ -23,8 +19,11 @@ export default function Home() {
           <div className="text-xl md:text-2xl mb-6 h-8">
             <TypeWriter words={roles} />
           </div>
-          <p className="text-gray-500 mb-8 leading-relaxed">
-            Computer Science graduate skilled in Java and full-stack technologies with professional experience in automated software testing. Adept at leveraging development expertise to build efficient testing frameworks and optimize system performance.
+          <p className="text-gray-500 mb-8 leading-relaxed text-justify">
+            Computer Science graduate skilled in Java and full-stack
+            technologies with professional experience in automated software
+            testing. Adept at leveraging development expertise to build
+            efficient testing frameworks and optimize system performance.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link

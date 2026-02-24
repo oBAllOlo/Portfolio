@@ -128,14 +128,14 @@ export default function About() {
               <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
                 About me
               </h1>
-              <p className="text-gray-500 mb-4 leading-relaxed">
+              <p className="text-gray-500 mb-4 leading-relaxed text-justify">
                 I am a Computer Science graduate from Kasetsart University. My
                 journey started with developing a web application for my Custom
                 Keyboard project using React and Node.js, followed by an
                 internship where I worked with Java and PostgreSQL to handle
                 large databases.
               </p>
-              <p className="text-gray-500 mb-6 leading-relaxed">
+              <p className="text-gray-500 mb-6 leading-relaxed text-justify">
                 These experiences helped me understand how software is built
                 from both front-end and back-end perspectives. Now, I use this
                 understanding in Software Testing, applying my coding skills to
@@ -183,7 +183,12 @@ export default function About() {
                   </h3>
                   <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3">
                     {category.skills.map((skill, index) => {
-                      const isDarkIcon = ['github_dark.svg', 'mysql-icon-dark.svg', 'mongodb-icon-dark.svg', 'nextjs_icon_dark.svg'].includes(skill.icon);
+                      const isDarkIcon = [
+                        "github_dark.svg",
+                        "mysql-icon-dark.svg",
+                        "mongodb-icon-dark.svg",
+                        "nextjs_icon_dark.svg",
+                      ].includes(skill.icon);
                       return (
                         <div
                           key={index}
@@ -193,7 +198,7 @@ export default function About() {
                           <img
                             src={`https://svgl.app/library/${skill.icon}`}
                             alt={skill.name}
-                            className={`w-10 h-10 ${isDarkIcon ? 'icon-invert-light' : ''}`}
+                            className={`w-10 h-10 ${isDarkIcon ? "icon-invert-light" : ""}`}
                           />
                         </div>
                       );
@@ -245,14 +250,16 @@ export default function About() {
                     <p className="text-indigo-500 font-medium mb-2">
                       {exp.company}
                     </p>
-                    <p className="text-gray-500 text-sm">{exp.description}</p>
+                    <p className="text-gray-500 text-sm text-justify">
+                      {exp.description}
+                    </p>
                     {exp.responsibilities &&
                       exp.responsibilities.length > 0 && (
                         <ul className="mt-3 space-y-1">
                           {exp.responsibilities.map((resp, respIndex) => (
                             <li
                               key={respIndex}
-                              className="text-gray-500 text-sm flex items-start gap-2"
+                              className="text-gray-500 text-sm flex items-start gap-2 text-justify"
                             >
                               <span className="text-indigo-500 mt-1">•</span>
                               <span>{resp}</span>
@@ -307,7 +314,9 @@ export default function About() {
                     <p className="text-purple-500 font-medium mb-2">
                       {edu.school}
                     </p>
-                    <p className="text-gray-500 text-sm">{edu.description}</p>
+                    <p className="text-gray-500 text-sm text-justify">
+                      {edu.description}
+                    </p>
                   </div>
                 </div>
               ))}

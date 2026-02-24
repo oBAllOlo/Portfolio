@@ -30,7 +30,7 @@ export default function Portfolio() {
           <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900 dark:text-white">
             My Projects
           </h1>
-          <p className="text-gray-500 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-gray-500 text-center mb-12 max-w-3xl mx-auto">
             Here are some of my recent projects. Each one was built with passion
             and attention to detail.
           </p>

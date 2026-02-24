@@ -1,34 +1,18 @@
 @import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #f3f4f6;
-  --foreground: #1f2937;
-  --card-bg: #ffffff;
-  --accent: #7e86bd;
-  --accent-hover: #6b73a8;
-  --text-muted: #6b7280;
-  --border-color: #e5e7eb;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #111827;
-    --foreground: #f9fafb;
-    --card-bg: #1f2937;
-    --accent: #9ca3cf;
-    --accent-hover: #b4bad9;
-    --text-muted: #9ca3af;
-    --border-color: #374151;
-  }
+  --background: #111827;
+  --foreground: #f9fafb;
+  --card-bg: #1f2937;
+  --accent: #9ca3cf;
+  --accent-hover: #b4bad9;
+  --text-muted: #9ca3af;
+  --border-color: #374151;
 }
 
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  background-color: var(--background);
-  color: var(--foreground);
 }
 
 /* Typing cursor animation */
@@ -47,13 +31,7 @@ body {
   animation: blink 1s step-end infinite;
 }
 
-/* Invert white/dark icons in light mode so they're visible */
-.icon-invert-light {
-  filter: invert(1) !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  .icon-invert-light {
-    filter: invert(0) !important;
-  }
+/* Invert dark-only icons in light mode */
+html:not(.dark) .icon-invert-light {
+  filter: invert(1);
 }
