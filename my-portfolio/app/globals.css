@@ -30,3 +30,8 @@ html {
 .typing-cursor {
   animation: blink 1s step-end infinite;
 }
+
+/* Invert dark-only icons in light mode */
+html:not(.dark) .icon-invert-light {
+  filter: invert(1);
+}

@@ -40,11 +40,7 @@ export default function About() {
       title: "Frameworks",
       skills: [
         { name: "React", icon: "react_dark.svg" },
-        {
-          name: "Next.js",
-          icon: "nextjs_icon_dark.svg",
-          darkOnly: true,
-        },
+        { name: "Next.js", icon: "nextjs_icon_dark.svg" },
         { name: "Vite", icon: "vite.svg" },
         { name: "Node.js", icon: "nodejs.svg" },
         { name: "Spring Boot", icon: "spring.svg" },
@@ -57,7 +53,7 @@ export default function About() {
       title: "Database",
       skills: [
         { name: "PostgreSQL", icon: "postgresql.svg" },
-        { name: "MySQL", icon: "mysql-icon-dark.svg", darkOnly: true },
+        { name: "MySQL", icon: "mysql-icon-dark.svg" },
         {
           name: "MongoDB",
           icon: "mongodb-icon-dark.svg",
@@ -69,7 +65,7 @@ export default function About() {
       skills: [
         { name: "VS Code", icon: "vscode.svg" },
         { name: "Eclipse IDE", icon: "eclipse.svg" },
-        { name: "GitHub", icon: "github_dark.svg", darkOnly: true },
+        { name: "GitHub", icon: "github_dark.svg" },
         { name: "Git", icon: "git.svg" },
       ],
     },
@@ -205,24 +201,27 @@ export default function About() {
                     {category.title}
                   </h3>
                   <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3">
-                    {category.skills.map((skill, index) => (
-                      <div
-                        key={index}
-                        className="group aspect-square bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex items-center justify-center p-3 hover:-translate-y-1"
-                        title={skill.name}
-                      >
-                        <img
-                          src={`https://svgl.app/library/${skill.icon}`}
-                          alt={skill.name}
-                          className="w-10 h-10"
-                          style={
-                            !isDark && (skill as any).darkOnly
-                              ? { filter: "invert(1)" }
-                              : undefined
-                          }
-                        />
-                      </div>
-                    ))}
+                    {category.skills.map((skill, index) => {
+                      const isDarkIcon = [
+                        "github_dark.svg",
+                        "mysql-icon-dark.svg",
+                        "mongodb-icon-dark.svg",
+                        "nextjs_icon_dark.svg",
+                      ].includes(skill.icon);
+                      return (
+                        <div
+                          key={index}
+                          className="group aspect-square bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex items-center justify-center p-3 hover:-translate-y-1"
+                          title={skill.name}
+                        >
+                          <img
+                            src={`https://svgl.app/library/${skill.icon}`}
+                            alt={skill.name}
+                            className={`w-10 h-10 ${isDarkIcon ? "icon-invert-light" : ""}`}
+                          />
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               ))}
