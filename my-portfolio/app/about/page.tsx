@@ -1,11 +1,27 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import ScrollAnimation from "../components/ScrollAnimation";
 import SkillBar from "../components/SkillBar";
 
 export default function About() {
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    const html = document.documentElement;
+    const updateTheme = () => {
+      setIsDark(html.classList.contains("dark"));
+    };
+    updateTheme();
+
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(html, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
+  }, []);
+
   // Skill categories for SVGL
+  // darkOnly = true means icon is white/light-colored, needs invert in light mode
   const skillCategories = [
     {
       title: "Computer Languages",
@@ -24,7 +40,11 @@ export default function About() {
       title: "Frameworks",
       skills: [
         { name: "React", icon: "react_dark.svg" },
-        { name: "Next.js", icon: "nextjs_icon_dark.svg" },
+        {
+          name: "Next.js",
+          icon: "nextjs_icon_dark.svg",
+          darkOnly: true,
+        },
         { name: "Vite", icon: "vite.svg" },
         { name: "Node.js", icon: "nodejs.svg" },
         { name: "Spring Boot", icon: "spring.svg" },
@@ -37,8 +57,11 @@ export default function About() {
       title: "Database",
       skills: [
         { name: "PostgreSQL", icon: "postgresql.svg" },
-        { name: "MySQL", icon: "mysql-icon-dark.svg" },
-        { name: "MongoDB", icon: "mongodb-icon-dark.svg" },
+        { name: "MySQL", icon: "mysql-icon-dark.svg", darkOnly: true },
+        {
+          name: "MongoDB",
+          icon: "mongodb-icon-dark.svg",
+        },
       ],
     },
     {
@@ -46,7 +69,7 @@ export default function About() {
       skills: [
         { name: "VS Code", icon: "vscode.svg" },
         { name: "Eclipse IDE", icon: "eclipse.svg" },
-        { name: "GitHub", icon: "github_dark.svg" },
+        { name: "GitHub", icon: "github_dark.svg", darkOnly: true },
         { name: "Git", icon: "git.svg" },
       ],
     },
@@ -128,14 +151,14 @@ export default function About() {
               <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
                 About me
               </h1>
-              <p className="text-gray-500 mb-4 leading-relaxed">
+              <p className="text-gray-500 mb-4 leading-relaxed text-justify">
                 I am a Computer Science graduate from Kasetsart University. My
                 journey started with developing a web application for my Custom
                 Keyboard project using React and Node.js, followed by an
                 internship where I worked with Java and PostgreSQL to handle
                 large databases.
               </p>
-              <p className="text-gray-500 mb-6 leading-relaxed">
+              <p className="text-gray-500 mb-6 leading-relaxed text-justify">
                 These experiences helped me understand how software is built
                 from both front-end and back-end perspectives. Now, I use this
                 understanding in Software Testing, applying my coding skills to
@@ -192,6 +215,11 @@ export default function About() {
                           src={`https://svgl.app/library/${skill.icon}`}
                           alt={skill.name}
                           className="w-10 h-10"
+                          style={
+                            !isDark && (skill as any).darkOnly
+                              ? { filter: "invert(1)" }
+                              : undefined
+                          }
                         />
                       </div>
                     ))}
@@ -242,14 +270,16 @@ export default function About() {
                     <p className="text-indigo-500 font-medium mb-2">
                       {exp.company}
                     </p>
-                    <p className="text-gray-500 text-sm">{exp.description}</p>
+                    <p className="text-gray-500 text-sm text-justify">
+                      {exp.description}
+                    </p>
                     {exp.responsibilities &&
                       exp.responsibilities.length > 0 && (
                         <ul className="mt-3 space-y-1">
                           {exp.responsibilities.map((resp, respIndex) => (
                             <li
                               key={respIndex}
-                              className="text-gray-500 text-sm flex items-start gap-2"
+                              className="text-gray-500 text-sm flex items-start gap-2 text-justify"
                             >
                               <span className="text-indigo-500 mt-1">•</span>
                               <span>{resp}</span>
@@ -304,7 +334,9 @@ export default function About() {
                     <p className="text-purple-500 font-medium mb-2">
                       {edu.school}
                     </p>
-                    <p className="text-gray-500 text-sm">{edu.description}</p>
+                    <p className="text-gray-500 text-sm text-justify">
+                      {edu.description}
+                    </p>
                   </div>
                 </div>
               ))}
