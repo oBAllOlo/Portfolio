@@ -19,7 +19,7 @@ export default function Portfolio() {
         "A full-featured online store with cart, checkout, and payment integration.",
       technologies: ["Next.js", "Tailwind CSS"],
       link: "https://my-ecom-rho.vercel.app/",
-      imageUrl: "/cover_image_ecom.png",
+      imageUrl: "/images/cover_image_ecom.png",
     },
   ];
 

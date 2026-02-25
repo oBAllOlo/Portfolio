@@ -63,7 +63,7 @@ export default function Home() {
           <div className="relative">
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center shadow-2xl overflow-hidden">
               <img
-                src="/me.jpg"
+                src="/images/me.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover"
               />

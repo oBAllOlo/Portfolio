@@ -116,7 +116,7 @@ export default function About() {
             <div className="flex justify-center">
               <div className="w-full max-w-sm aspect-square rounded-2xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
                 <img
-                  src="/me_2.jpg"
+                  src="/images/me_2.jpg"
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />
@@ -142,28 +142,52 @@ export default function About() {
                 write automated tests with Playwright and ensure the system
                 works reliably.
               </p>
-              <Link
-                href="/Curriculum Vitae.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded-lg transition-all hover:-translate-y-0.5 hover:shadow-lg"
-              >
-                DOWNLOAD CV
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
+              <div className="flex flex-wrap gap-4 mt-8">
+                <Link
+                  href="/documents/Curriculum Vitae.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-3 bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded-lg transition-all hover:-translate-y-0.5 hover:shadow-lg"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4m4-5l5 5 5-5m-5 5V3"
-                  />
-                </svg>
-              </Link>
+                  DOWNLOAD CV
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4m4-5l5 5 5-5m-5 5V3"
+                    />
+                  </svg>
+                </Link>
+                <Link
+                  href="/documents/transcript.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-3 bg-transparent text-indigo-500 font-medium rounded-lg border-2 border-indigo-500 hover:bg-indigo-50 dark:text-indigo-400 dark:border-indigo-400 dark:hover:bg-indigo-900/30 transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                >
+                  DOWNLOAD TRANSCRIPT
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4m4-5l5 5 5-5m-5 5V3"
+                    />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
         </ScrollAnimation>
